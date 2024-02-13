@@ -6,8 +6,8 @@ import './App.scss';
 import _ from 'lodash';
 
 export const App: React.FC = () => {
-  const [sizeChunks, setSizeChunks] = React.useState<number>(10);
-  const [list, setList] = React.useState<string[]>([]);
+  const [sizeChunks, setSizeChunks] = useState<number>(10);
+  const [list, setList] = useState<string[]>([]);
  
   const handleClickStart = async () => {
     try {

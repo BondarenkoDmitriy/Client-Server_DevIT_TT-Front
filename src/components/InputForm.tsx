@@ -1,9 +1,9 @@
 /* eslint-disable */
 
-// components/InputForm.tsx
 import React, { useRef, useState } from "react";
 import "./InputForm.scss";
 import { debounce } from "lodash";
+
 interface InputFormProps {
   onStart: () => void;
   formOnChange: (value: number) => void;
