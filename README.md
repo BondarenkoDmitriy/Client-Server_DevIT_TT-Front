@@ -27,6 +27,6 @@ Enjoy the results
 ## Technologies used:
   HTML | CSS (SASS) | React | TypeScript
 
-## Автор
+## Author
   Dmytro Bondarenko
 
