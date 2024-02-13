@@ -29,7 +29,7 @@ Enjoy the results
    https://github.com/BondarenkoDmitriy/Client-Server_DevIT_TT-Back
 
 ## Technologies used:
-  HTML | CSS (SASS) | React | TypeScript
+  HTML | CSS (SASS) | React(lodash, mask) | TypeScript
 
 ## Author
   Dmytro Bondarenko
