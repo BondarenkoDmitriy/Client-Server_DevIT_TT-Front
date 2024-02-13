@@ -1,8 +1,9 @@
 # Client-Server Front Side:
-A form for entering numbers from 0 to 100, entering a number outside the range will result in an error.
-If the entered number is correct, after pressing the Start button, a message will be displayed that everything has been sent correctly.
-Also, the entire sequence of indices up to the entered number will come in response to our request.
-If the delay between responses is less than 50 milliseconds, an error will also appear, but in the console.
+Enter a number from 0 to 100 in the form field.
+Numbers that are not in the range will be reset to the initial value.
+Non-numbers cannot be entered into the form.
+After pressing the Start button, we receive 1000 requests that are loaded according to the specified number of chunks.
+With a pause of 1 second between chunks.
 
 Enjoy the results
   
