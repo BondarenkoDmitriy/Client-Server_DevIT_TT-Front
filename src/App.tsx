@@ -23,9 +23,15 @@ export const App: React.FC = () => {
         return response.text();
       });
       const promisesChunks = _.chunk(allPromises, sizeChunks);
+      
       promisesChunks.forEach(async (chunk) => {
-        const responses = await Promise.all(chunk);
-        setList((prev) => [...prev, ...responses]);
+
+        setTimeout(async() => {
+          const responses = await Promise.all(chunk);
+          setList((prev) => [...prev, ...responses]);
+
+        }, 1000)
+        
       });
     } catch (error) {
       console.error("Error:", error);
@@ -42,7 +48,7 @@ export const App: React.FC = () => {
   return (
     <div className='App'>
       <h1>Client-Server Form</h1>
-     
+
       <InputForm
         onStart={handleClickStart}
         formOnChange={setSizeChunks}
