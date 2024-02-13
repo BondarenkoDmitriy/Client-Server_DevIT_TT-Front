@@ -4,28 +4,22 @@ import './InputForm.scss';
 
 interface InputFormProps {
   onStart: (limit: number) => void;
+  formOnChange: (value: number) => void;
 }
 
-export const InputForm: React.FC<InputFormProps> = ({ onStart }) => {
-  const [inputValue, setInputValue] = useState('');
+export const InputForm: React.FC<InputFormProps> = ({ onStart, formOnChange }) => {
+  const [inputValue, setInputValue] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState<boolean>(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-    setError(null);
-    setSubmitted(false);
-  };
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const value = parseInt(inputValue, 10);
 
-    if (Number.isNaN(value) || value < 0 || value > 100) {
+    if (Number.isNaN(inputValue) || inputValue < 0 || inputValue > 100) {
       setError('Please enter a number between 0 and 100');
     } else {
-      onStart(value);
-      setInputValue('');
+      onStart(inputValue);
+      setInputValue(0);
       setSubmitted(true);
     }
   };
@@ -36,7 +30,10 @@ export const InputForm: React.FC<InputFormProps> = ({ onStart }) => {
         <input
           type="text"
           value={inputValue}
-          onChange={handleChange}
+          onChange={(e) => {
+            setInputValue(Number(e.target.value));
+            formOnChange(Number(e.target.value));
+          }}
           placeholder="Enter a number between 0 and 100"
         />
         <button type="submit">Start</button>

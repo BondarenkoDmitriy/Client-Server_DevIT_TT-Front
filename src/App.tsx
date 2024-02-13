@@ -6,6 +6,8 @@ import './App.scss';
 import _ from 'lodash';
 
 export const App: React.FC = () => {
+  const [sizeChunks, setSizeChunks] = React.useState<number>(10);
+
   const handleClickStart = async (limit: number) => {
     try {
       const requests = Array.from({ length: limit }, (_, index) => index + 1);
@@ -17,7 +19,7 @@ export const App: React.FC = () => {
         return response.text();
       })
 
-      const promisesChunks = _.chunk(allPromises, 10);
+      const promisesChunks = _.chunk(allPromises, sizeChunks);
 
       promisesChunks.forEach(async (chunk) => {
         const responses = await Promise.all(chunk);
@@ -39,7 +41,7 @@ export const App: React.FC = () => {
   return (
     <div className="App">
       <h1>Client-Server Form</h1>
-      <InputForm onStart={handleStart} />
+      <InputForm onStart={handleStart} formOnChange={setSizeChunks} />
     </div>
   );
 };
