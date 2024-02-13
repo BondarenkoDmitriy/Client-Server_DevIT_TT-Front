@@ -10,7 +10,7 @@ Enjoy the results
 
 1. Clone the project repository to your computer: git clone
     <br>
-    git clone https://github.com/BondarenkoDmitriy/Client-Server_DevIT_TT-Front.git
+    git clone: https://github.com/BondarenkoDmitriy/Client-Server_DevIT_TT-Front.git
 
 2. Open a terminal or command prompt and navigate to the project folder
     <br>
@@ -23,6 +23,9 @@ Enjoy the results
 4. Run the app by running the following command:
     <br>
     npm start
+5. Before starting work with the form, start the backend part:
+   <br>
+   https://github.com/BondarenkoDmitriy/Client-Server_DevIT_TT-Back
 
 ## Technologies used:
   HTML | CSS (SASS) | React | TypeScript
